@@ -442,6 +442,7 @@
             padding: 15px 0;
             gap: 20px;
             scrollbar-width: none;
+            -ms-overflow-style: none;
         }
         
         .certificate-container::-webkit-scrollbar {
@@ -496,11 +497,11 @@
         }
         
         .prev-btn {
-            left: -20px;
+            left: 0;
         }
         
         .next-btn {
-            right: -20px;
+            right: 0;
         }
         
         .experience-card {
@@ -685,6 +686,7 @@
             display: flex;
             justify-content: center;
             margin: 15px 0;
+            flex-wrap: wrap;
         }
         
         .footer-links a {
@@ -701,6 +703,49 @@
             font-size: 13px;
             margin-top: 15px;
             color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Mobile Menu Fix */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                text-align: center;
+            }
+            
+            .menu-btn {
+                display: block;
+            }
+            
+            .slider-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+            
+            .prev-btn {
+                left: 5px;
+            }
+            
+            .next-btn {
+                right: 5px;
+            }
         }
         
         @media (max-width: 992px) {
@@ -732,31 +777,6 @@
         }
         
         @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                padding: 15px 0;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                transition: var(--transition);
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 12px 0;
-                text-align: center;
-            }
-            
-            .menu-btn {
-                display: block;
-            }
-            
             .projects-grid {
                 grid-template-columns: 1fr;
             }
@@ -814,7 +834,7 @@
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/rishendra-manne-64645b27a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="LinkedIn"><i>in</i></a>
                         <a href="https://github.com/rishendra-manne" title="GitHub"><i>git</i></a>
-                        <a href="mailto:webmaster@rishendramanne@gmail.com" title="Email"><i>@</i></a>
+                        <a href="mailto:rishendramanne@gmail.com" title="Email"><i>@</i></a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -857,8 +877,8 @@
                         <h3 class="project-title">Descriptive Answer Evaluation System</h3>
                         <p class="project-desc">An AI-powered system that evaluates descriptive answers by comparing them with standard answers using NLP techniques and semantic similarity algorithms.</p>
                         <div class="project-links">
-                            <a href="#" class="btn btn-outline"> View Details </a>
-                            <a href="https://8503-01jf26928wh2n3c67tphvmthpa.cloudspaces.litng.ai" class="btn btn-outline">  Try Live Demo  </a>
+                            <a href="#" class="btn btn-outline">View Details</a>
+                            <a href="https://8503-01jf26928wh2n3c67tphvmthpa.cloudspaces.litng.ai" class="btn btn-outline">Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -869,8 +889,8 @@
                         <h3 class="project-title">Shrimp Seed Counter</h3>
                         <p class="project-desc">A computer vision application that automates the counting of shrimp seeds using image processing and object detection algorithms for accurate inventory management.</p>
                         <div class="project-links">
-                            <a href="https://github.com/rishendra-manne/shrimp_seeds_detection.git" class="btn btn-outline"> View Details </a>
-                            <a href="https://8501-01jkwthpynp717qws3y927r9h8.cloudspaces.litng.ai" class="btn btn-outline">  Try Live Demo  </a>
+                            <a href="https://github.com/rishendra-manne/shrimp_seeds_detection.git" class="btn btn-outline">View Details</a>
+                            <a href="https://8501-01jkwthpynp717qws3y927r9h8.cloudspaces.litng.ai" class="btn btn-outline">Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -881,8 +901,8 @@
                         <h3 class="project-title">Movie Recommendation System</h3>
                         <p class="project-desc">Content-based filtering recommendation system that suggests movies to users based on similarity metrics between movie attributes and user preferences.</p>
                         <div class="project-links">
-                            <a href="https://github.com/rishendra-manne/MOVIE_RECOMENDTION_SYSTEM.git" class="btn btn-outline"> View Details </a>
-                            <a href="https://8501-01jfdbcn9vbtpzkec5xfpef2kt.cloudspaces.litng.ai" class="btn btn-outline">  Try Live Demo  </a>
+                            <a href="https://github.com/rishendra-manne/MOVIE_RECOMENDTION_SYSTEM.git" class="btn btn-outline">View Details</a>
+                            <a href="https://8501-01jfdbcn9vbtpzkec5xfpef2kt.cloudspaces.litng.ai" class="btn btn-outline">Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -893,8 +913,8 @@
                         <h3 class="project-title">Resume Shortlisting System</h3>
                         <p class="project-desc">ML-based system that automates the process of shortlisting resumes by analyzing and scoring them based on job requirements and candidate qualifications.</p>
                         <div class="project-links">
-                            <a href="https://github.com/rishendra-manne/Resume_Shortlisting_System.git" class="btn btn-outline"> View Details </a>
-                            <a href="#" class="btn btn-outline">  Try Live Demo  </a>
+                            <a href="https://github.com/rishendra-manne/Resume_Shortlisting_System.git" class="btn btn-outline">View Details</a>
+                            <a href="#" class="btn btn-outline">Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -905,8 +925,8 @@
                         <h3 class="project-title">RAG Builder</h3>
                         <p class="project-desc">A no-code tool that builds Retrieval-Augmented Generation applications on user data and provides API endpoints for seamless integration.</p>
                         <div class="project-links">
-                            <a href="https://github.com/rishendra-manne/RAG_BUILDER.git" class="btn btn-outline"> View Details </a>
-                            <a href="https://8504-01jmep9axx72ewy4mdzwddcqsd.cloudspaces.litng.ai" class="btn btn-outline">  Try Live Demo  </a>
+                            <a href="https://github.com/rishendra-manne/RAG_BUILDER.git" class="btn btn-outline">View Details</a>
+                            <a href="https://8504-01jmep9axx72ewy4mdzwddcqsd.cloudspaces.litng.ai" class="btn btn-outline">Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -917,8 +937,8 @@
                         <h3 class="project-title">AI Invisible Watermarking System</h3>
                         <p class="project-desc">Deep learning-based watermarking using CNN with Autoencoder architecture for invisible and robust protection of digital assets.</p>
                         <div class="project-links">
-                            <a href="#" class="btn btn-outline"> View Details </a>
-                            <a href="https://8501-01jpz3pnaz15y5dad6sfzqy102.cloudspaces.litng.ai" class="btn btn-outline">  Try Live Demo  </a>
+                            <a href="#" class="btn btn-outline">View Details</a>
+                            <a href="https://8501-01jpz3pnaz15y5dad6sfzqy102.cloudspaces.litng.ai" class="btn btn-outline">Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -933,7 +953,7 @@
             <div class="experience-card">
                 <div class="experience-header">
                     <h3>ML Engineer Internship</h3>
-                    <span class="company">IIIT Black Bucks</span>
+                    <span class="company">IIDT Black Bucks</span>
                 </div>
                 <div class="position">Machine Learning Engineer Intern</div>
                 <p>Worked on a Breast Cancer Prediction project that achieved 95% accuracy in detecting early-stage cancer. Designed and implemented machine learning algorithms to analyze medical imaging data and identify potential cancer markers.</p>
@@ -942,39 +962,51 @@
             
             <h3 style="text-align: center; margin: 40px 0 20px;">Certifications</h3>
             <div class="certificate-slider">
+                <div class="slider-btn prev-btn" id="prevBtn">❮</div>
                 <div class="certificate-container" id="certificateContainer">
                     <div class="certificate-card">
-                        <h3>Deep Learning Specialization</h3>
-                        <p>Coursera | 2023</p>
-                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">View Certificate</a>
+                        <h3>Machine Learning Internship</h3>
+                        <p>IIDT Black Bucks | 2024</p>
+                        <p>Certificate for completing ML internship with Excellent rating</p>
+                        <a href="https://drive.google.com/file/d/1VKtx-FwFyEN26LhYKP3pQw2X6otyo2kR/view?usp=sharing" class="btn btn-outline" style="margin-top: 10px;">View Certificate</a>
                     </div>
                     <div class="certificate-card">
-                        <h3>Machine Learning Engineer</h3>
-                        <p>Udacity | 2023</p>
-                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">View Certificate</a>
+                        <h3>Machine Learning Bootcamp</h3>
+                        <p>Udemy | 2025</p>
+                        <p>Comprehensive training in ML, Deep Learning and NLP</p>
+                        <a href="https://drive.google.com/file/d/1a5ihqfnlzTqvSDEK9BVbzRnS29c3QIi9/view?usp=sharing" class="btn btn-outline" style="margin-top: 10px;">View Certificate</a>
                     </div>
                     <div class="certificate-card">
-                        <h3>TensorFlow Developer</h3>
-                        <p>Google | 2022</p>
-                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">View Certificate</a>
+                        <h3>AI Foundation</h3>
+                        <p>Hexart.in | 2024</p>
+                        <p>Fundamentals of Artificial Intelligence and Machine Learning</p>
+                        <a href="https://drive.google.com/file/d/1cXbZ8juOFxBLyiD6usQ3390Tr1qVJ8W-/view?usp=sharing" class="btn btn-outline" style="margin-top: 10px;">View Certificate</a>
                     </div>
                     <div class="certificate-card">
-                        <h3>Python for Data Science</h3>
-                        <p>IBM | 2022</p>
-                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">View Certificate</a>
+                        <h3>AI Advance</h3>
+                        <p>Hexart.in | 2024</p>
+                        <p>Advanced concepts in Artificial Intelligence</p>
+                        <a href="https://drive.google.com/file/d/1cVncDFYJk97yctJW8bqItV7-WPvo-Utj/view?usp=sharing" class="btn btn-outline" style="margin-top: 10px;">View Certificate</a>
                     </div>
                     <div class="certificate-card">
-                        <h3>Data Science & Analytics</h3>
-                        <p>Microsoft | 2021</p>
-                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">View Certificate</a>
+                        <h3>Python Bootcamp</h3>
+                        <p>Udemy | 2025</p>
+                        <p>Complete Python programming course</p>
+                        <a href="https://drive.google.com/file/d/1iZ0rpZJdA_9cCWw5pZCU1botV6GQixJa/view?usp=sharing" class="btn btn-outline" style="margin-top: 10px;">View Certificate</a>
                     </div>
                     <div class="certificate-card">
-                        <h3>Natural Language Processing</h3>
-                        <p>Stanford Online | 2021</p>
-                        <a href="#" class="btn btn-outline" style="margin-top: 15px;">View Certificate</a>
+                        <h3>Smart India Hackathon</h3>
+                        <p>AICTE Idea Labs SRKR | 2024</p>
+                        <p>Participation certificate for national hackathon</p>
+                        <a href="https://drive.google.com/file/d/1VYeHrP4CbIuXiTm-Gx4WpMItrzk6-5et/view?usp=sharing" class="btn btn-outline" style="margin-top: 10px;">View Certificate</a>
+                    </div>
+                    <div class="certificate-card">
+                        <h3>Digital Thinking</h3>
+                        <p>AICTE Idea Labs SRKR | 2023</p>
+                        <p>Fundamentals of digital thinking and problem solving</p>
+                        <a href="https://drive.google.com/file/d/1VQHDqeheflQjoylQ9Z9qd7w4wqIr3LGn/view?usp=sharing" class="btn btn-outline" style="margin-top: 10px;">View Certificate</a>
                     </div>
                 </div>
-                <div class="slider-btn prev-btn" id="prevBtn">❮</div>
                 <div class="slider-btn next-btn" id="nextBtn">❯</div>
             </div>
         </div>
@@ -1008,37 +1040,37 @@
                         <div class="contact-icon">@</div>
                         <div class="contact-text">
                             <h3>Email</h3>
-                            <a href="mailto:webmaster@rishendramanne@gmail.com">rishendramanne@gmail.com</a>
+                            <a href="mailto:rishendramanne@gmail.com">rishendramanne@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">in</div>
                         <div class="contact-text">
                             <h3>LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/rishendra-manne-64645b27a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">linkedin.com/in/mannerishendra</p>
+                            <a href="https://www.linkedin.com/in/rishendra-manne-64645b27a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">linkedin.com/in/rishendra-manne</a>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">git</div>
                         <div class="contact-text">
                             <h3>GitHub</h3>
-                            <a href="https://github.com/rishendra-manne" title="GitHub">github.com/mannerishendra</a>
+                            <a href="https://github.com/rishendra-manne">github.com/rishendra-manne</a>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input type="text" id="subject" class="form-control" placeholder="Subject">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                            <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
@@ -1064,8 +1096,14 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
@@ -1073,28 +1111,27 @@
                 
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 70,
                         behavior: 'smooth'
                     });
                     
+                    // Close mobile menu if open
                     document.getElementById('navLinks').classList.remove('active');
                 }
             });
         });
-        
-        document.getElementById('menuBtn').addEventListener('click', function () {
-            document.getElementById('navLinks').classList.toggle('active');
-        });
-        
-        window.addEventListener('scroll', function () {
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
             if (window.scrollY > 100) {
-                header.classList.add('scrolled');
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
             } else {
-                header.classList.remove('scrolled');
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
             }
         });
-        
+
+        // Section animation on scroll
         const sections = document.querySelectorAll('section');
         
         function checkSections() {
@@ -1108,35 +1145,62 @@
             });
         }
         
+        // Run once on load
         checkSections();
         
+        // Run on scroll
         window.addEventListener('scroll', checkSections);
-        
+
+        // Certificate slider functionality
         const certificateContainer = document.getElementById('certificateContainer');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         
-        prevBtn.addEventListener('click', function () {
+        prevBtn.addEventListener('click', function() {
             certificateContainer.scrollBy({
-                left: -350,
+                left: -280,
                 behavior: 'smooth'
             });
         });
         
-        nextBtn.addEventListener('click', function () {
+        nextBtn.addEventListener('click', function() {
             certificateContainer.scrollBy({
-                left: 350,
+                left: 280,
                 behavior: 'smooth'
             });
         });
-        
+
+        // Contact form functionality
         const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                alert('Thank you for your message! This is a demo form.');
-            });
-        }
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Create mailto link
+            const mailtoLink = `mailto:rishendramanne@gmail.com?subject=${encodeURIComponent(subject || 'Contact from Portfolio')}&body=${encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            )}`;
+            
+            // Open default email client
+            window.location.href = mailtoLink;
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Show success message
+            alert('Thank you for your message! Your email client will open to send the message.');
+        });
     </script>
 </body>
 </html>
